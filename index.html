@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BaseForgeUtils - WalletConnect</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+      background: linear-gradient(135deg, #1e3c72, #2a5298);
+      margin: 0;
+      padding: 20px;
+      color: #fff;
+    }
+    .container {
+      background: rgba(255, 255, 255, 0.95);
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+      max-width: 700px;
+      width: 100%;
+      color: #333;
+    }
+    .btn {
+      padding: 12px 24px;
+      font-size: 16px;
+      cursor: pointer;
+      background: linear-gradient(45deg, #ff6b6b, #ff8e53);
+      border: none;
+      border-radius: 8px;
+      color: white;
+      margin: 10px;
+      transition: transform 0.2s;
+    }
+    .btn:hover { transform: scale(1.05); background: linear-gradient(45deg, #e55a5a, #e57b45); }
+    input, select {
+      padding: 12px;
+      font-size: 14px;
+      margin: 8px 0;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      width: 100%;
+      box-sizing: border-box;
+      background: #f9f9f9;
+    }
+    .addr, .chain { font-size: 14px; margin: 8px 0; color: #555; }
+    .card {
+      margin: 15px 0;
+      padding: 15px;
+      border-radius: 10px;
+      background: linear-gradient(135deg, #e0eafc, #cfdef3);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+    .status { font-size: 14px; color: #333; word-wrap: break-word; }
+    h1 { font-size: 28px; margin: 0 0 10px; color: #fff; text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3); }
+    h2 { font-size: 18px; margin: 10px 0 5px; color: #333; }
+    .lead { font-size: 16px; color: #666; margin-bottom: 20px; }
+    .foot { margin-top: 20px; text-align: center; color: #ccc; }
+    .connect-row { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; }
+  </style>
+  <script src="https://cdn.jsdelivr.net/npm/web3@1.10.0/dist/web3.min.js"></script>
+  <script src="https://unpkg.com/@walletconnect/web3-provider@1.8.0/dist/umd/index.min.js"></script>
+</head>
+<body>
+  <div class="container">
+    <header class="top">
+      <h1>🛠 BaseForgeUtils</h1>
+      <p class="lead">Connect via WalletConnect or MetaMask to interact with 11 utility contracts on Base Mainnet.</p>
+      <div class="connect-row">
+        <button id="btnConnect" class="btn">🔗 Connect Wallet</button>
+        <div id="addr" class="addr">Not connected</div>
+        <div id="chain" class="chain"></div>
+      </div>
+    </header>
+    <main class="grid" id="cards">
+      <!-- Contract cards injected dynamically -->
+    </main>
+    <footer class="foot">
+      <div>Repo: <code>BaseForgeUtils</code></div>
+      <div id="txLog" class="txlog"></div>
+    </footer>
+  </div>
+  <script>
+    let web3;
+    let accounts;
+    let provider;
+
+    const contracts = [
+      { name: "EventEmitter", address: "0x0CFd7ed0e6CdaBB0472326665B21266cC76F4a5B", method: "emitEvent", type: "string", inputId: "eventMessage" },
+      { name: "ValueSetter", address: "0xfef9945e5f88B4B915Bd55B293f7C6D1EB41DdCF", method: "setValue", type: "number", inputId: "valueInput" },
+      { name: "TimestampChecker", address: "0x97D0F9D326a6F8e2Fcf1D3731b3F108d8Ea4545e", method: "checkTimestamp", type: "none", inputId: "" },
+      { name: "BalanceTracker", address: "0x88289d4cB0A6CE69Ac137559245ad4C54AFe9c4a", method: "updateBalance", type: "number", inputId: "balanceInput" },
+      { name: "MessageEncoder", address: "0xaAb250E1199F1B4A2a6b5ba3E30c2752676Dd52c", method: "encodeMessage", type: "string", inputId: "messageInput" },
+      { name: "RandomSeedGen", address: "0x441368286792D14043deEd03Cb047f66d29effd0", method: "generateSeed", type: "number", inputId: "seedInput" },
+      { name: "TaskScheduler", address: "0xfD817bF7a3a985684B5c56F34583d927954c530a", method: "scheduleTask", type: "number", inputId: "taskTime" },
+      { name: "ScoreLedger", address: "0xf99CEA5F22cE40B51c794d452E4cEacF49E32503", method: "recordScore", type: "number", inputId: "scoreInput" },
+      { name: "FeedbackVault", address: "0xD60A2523EBcf7A4cba6D8Fee7c57f75983a510b9", method: "submitFeedback", type: "string", inputId: "feedbackInput" },
+      { name: "WishRegistry", address: "0xC4A9C6996043A5f4407a3DDD0B85159252fD328b", method: "registerWish", type: "string", inputId: "wishInput" },
+      { name: "QuizEngine", address: "0x6263067390bEDeBb38b5B534270C1489c0d004bf", method: "answerQuestion", type: "bool", inputId: "answerInput" }
+    ];
+
+    const cardsContainer = document.getElementById("cards");
+    contracts.forEach(c => {
+      const card = document.createElement("section");
+      card.className = "card";
+      card.innerHTML = `
+        <h2>🛠 ${c.name} - ${c.method}</h2>
+        ${c.type !== "none" ? `<input id="${c.inputId}" placeholder="${c.type === 'string' ? 'Enter text' : c.type === 'number' ? 'Enter number' : 'True/False'}" ${c.type === 'bool' ? 'type="checkbox"' : ''}/>` : ""}
+        <button id="btn_${c.name}_${c.method}" class="btn">Call ${c.method}()</button>
+        <div class="status" id="status_${c.name}_${c.method}"></div>
+      `;
+      cardsContainer.appendChild(card);
+    });
+
+    document.getElementById("btnConnect").addEventListener("click", async () => {
+      try {
+        if (window.ethereum) {
+          provider = window.ethereum;
+          await provider.request({ method: "eth_requestAccounts" });
+          web3 = new Web3(provider);
+          accounts = await web3.eth.getAccounts();
+          showWallet(accounts[0]);
+          return;
+        }
+        const WalletConnectProvider = window.WalletConnectProvider.default;
+        provider = new WalletConnectProvider({
+          infuraId: "5056a2b581e5962f9e3083d68053b5d8",
+          rpc: { 8453: "https://mainnet.base.org" },
+          chainId: 8453
+        });
+        await provider.enable();
+        web3 = new Web3(provider);
+        accounts = await web3.eth.getAccounts();
+        showWallet(accounts[0]);
+      } catch (err) {
+        console.error(err);
+        document.getElementById("txLog").innerText = `Failed to connect: ${err.message}`;
+      }
+    });
+
+    function showWallet(addr) {
+      document.getElementById("addr").innerText = addr;
+      document.getElementById("chain").innerText = "Connected to Base Mainnet";
+    }
+
+    contracts.forEach(c => {
+      document.getElementById(`btn_${c.name}_${c.method}`).addEventListener("click", async () => {
+        try {
+          const input = c.type !== "none" ? document.getElementById(c.inputId).value : null;
+          const abi = [{
+            "inputs": c.type === "none" ? [] : [{
+              internalType: c.type === "string" ? "string" : c.type === "number" ? "uint256" : "bool",
+              name: "_param",
+              type: c.type === "string" ? "string" : c.type === "number" ? "uint256" : "bool"
+            }],
+            "name": c.method,
+            "outputs": [],
+            "stateMutability": c.type === "eth" ? "payable" : "nonpayable",
+            "type": "function"
+          }];
+          const contract = new web3.eth.Contract(abi, c.address);
+          let tx;
+          if (c.type === "none") {
+            tx = await contract.methods[c.method]().send({ from: accounts[0] });
+          } else if (c.type === "string" || c.type === "number") {
+            tx = await contract.methods[c.method](input).send({ from: accounts[0] });
+          } else if (c.type === "bool") {
+            tx = await contract.methods[c.method](input === "true" || input === "on").send({ from: accounts[0] });
+          }
+          document.getElementById(`status_${c.name}_${c.method}`).innerText = `Tx: ${tx.transactionHash}`;
+          document.getElementById("txLog").innerText = `Tx sent: ${tx.transactionHash}`;
+        } catch (e) {
+          console.error(e);
+          document.getElementById(`status_${c.name}_${c.method}`).innerText = `Error: ${e.message}`;
+          document.getElementById("txLog").innerText = `Error: ${e.message}`;
+        }
+      });
+    });
+  </script>
+</body>
+</html>
