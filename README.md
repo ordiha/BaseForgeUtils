@@ -1,6 +1,7 @@
 # BaseForgeUtils
 
 A collection of 40 utility smart contracts deployed on Base Mainnet (chain ID: 8453) for DeFi, governance, and community use. Integrated with WalletConnect for seamless frontend interactions. Built for Talent Protocol Builder Rewards.
+frontend adress:  ****      https://ordiha.github.io/BaseForgeUtils/     ****
 
 ## Overview
 BaseForgeUtils provides standalone Solidity contracts (no imports, no flattening needed) for tasks like event logging, value storage, polling, and feedback. Each contract is verified on Basescan and ready for interaction via a WalletConnect-enabled frontend.
@@ -59,8 +60,8 @@ BaseForgeUtils provides standalone Solidity contracts (no imports, no flattening
    - Update contract addresses in this README.
 
 ## Frontend Integration
-- **WalletConnect**: Use Project ID `ab89fbce996fcfa27b2c5b16fb73632f` (from BaseTools).
-- **Deploy Frontend**: Host `index.html` (adapted from BaseTools) on GitHub Pages (`https://ordiha.github.io/BaseForgeUtils`).
+- **WalletConnect**: Use Project ID `09acfba7c63f34a57dc7a9d8c20b1782` 
+- **Deploy Frontend**: Host `index.html` (adapted from BaseTools) on GitHub Pages ( https://ordiha.github.io/BaseForgeUtils/ ).
 - **Steps**:
   - Create `index.html` with `web3.js` and `@walletconnect/web3-provider@1.8.0` (based on BaseTools).
   - Add to repo root: `git add index.html; git commit -m "Add WalletConnect frontend"; git push`.
