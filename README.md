@@ -22,10 +22,10 @@ BaseForgeUtils provides standalone Solidity contracts (no imports, no flattening
 | QuizEngine | 0x6263067390bEDeBb38b5B534270C1489c0d004bf | Quiz | https://basescan.org/address/0x6263067390bedebb38b5b534270c1489c0d004bf#codee |
 | DonationVault | 0x022E5418d4C9151F69e4a0E0a1bf06BCc5B58e0C | Donation | https://basescan.org/address/0x022e5418d4c9151f69e4a0e0a1bf06bcc5b58e0c#code |
 | BadgeIssuer | 0x3eE6F8C8F0535B22b4cdcF1785C0342084764AEf | Badges | https://basescan.org/address/0x3ee6f8c8f0535b22b4cdcf1785c0342084764aef#code |
-| PollAggregator | `<ADDRESS>` | Polling | Aggregates poll results. |
-| ReminderTrigger | `<ADDRESS>` | Reminders | Triggers reminders by time. |
-| FeedbackAggregator | `<ADDRESS>` | Feedback | Counts feedback submissions. |
-| PollViewer | `<ADDRESS>` | Polling | Tracks poll views. |
+| PollAggregator | 0xa352bB1f646CCE12564696628E16de617955a893 | Polling |https://basescan.org/address/0xa352bb1f646cce12564696628e16de617955a893#code |
+| ReminderTrigger | 0xDd6DA2D4172e3aC6Abb918827CB8f114731847F9 | Reminders | https://basescan.org/address/0xdd6da2d4172e3ac6abb918827cb8f114731847f9#code |
+| FeedbackAggregator | 0xc683a1153d27d89588A167EfD7963426D0819198 | Feedback | https://basescan.org/address/0xc683a1153d27d89588a167efd7963426d0819198#code |
+| PollViewer | 0x3494e15B6a9e97c00FFf34C40894536a65c7986c | https://basescan.org/address/0x3494e15b6a9e97c00fff34c40894536a65c7986c#code |
 | EventLogger | `<ADDRESS>` | Logging | Logs event hashes. |
 | PriceUpdater | `<ADDRESS>` | Price | Updates price values. |
 | TodoManager | `<ADDRESS>` | Task Management | Manages todo lists. |
