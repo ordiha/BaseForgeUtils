@@ -20,8 +20,8 @@ BaseForgeUtils provides standalone Solidity contracts (no imports, no flattening
 | FeedbackVault | 0xD60A2523EBcf7A4cba6D8Fee7c57f75983a510b9 | Feedback | https://basescan.org/address/0xd60a2523ebcf7a4cba6d8fee7c57f75983a510b9#code |
 | WishRegistry | 0xC4A9C6996043A5f4407a3DDD0B85159252fD328b | Registry | https://basescan.org/address/0xc4a9c6996043a5f4407a3ddd0b85159252fd328b#code |
 | QuizEngine | 0x6263067390bEDeBb38b5B534270C1489c0d004bf | Quiz | https://basescan.org/address/0x6263067390bedebb38b5b534270c1489c0d004bf#codee |
-| DonationVault | `<ADDRESS>` | Donation | Collects ETH donations. |
-| BadgeIssuer | `<ADDRESS>` | Badges | Issues user badges. |
+| DonationVault | 0x022E5418d4C9151F69e4a0E0a1bf06BCc5B58e0C | Donation | https://basescan.org/address/0x022e5418d4c9151f69e4a0e0a1bf06bcc5b58e0c#code |
+| BadgeIssuer | 0x3eE6F8C8F0535B22b4cdcF1785C0342084764AEf | Badges | https://basescan.org/address/0x3ee6f8c8f0535b22b4cdcf1785c0342084764aef#code |
 | PollAggregator | `<ADDRESS>` | Polling | Aggregates poll results. |
 | ReminderTrigger | `<ADDRESS>` | Reminders | Triggers reminders by time. |
 | FeedbackAggregator | `<ADDRESS>` | Feedback | Counts feedback submissions. |
