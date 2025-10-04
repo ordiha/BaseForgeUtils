@@ -26,9 +26,9 @@ BaseForgeUtils provides standalone Solidity contracts (no imports, no flattening
 | ReminderTrigger | 0xDd6DA2D4172e3aC6Abb918827CB8f114731847F9 | Reminders | https://basescan.org/address/0xdd6da2d4172e3ac6abb918827cb8f114731847f9#code |
 | FeedbackAggregator | 0xc683a1153d27d89588A167EfD7963426D0819198 | Feedback | https://basescan.org/address/0xc683a1153d27d89588a167efd7963426d0819198#code |
 | PollViewer | 0x3494e15B6a9e97c00FFf34C40894536a65c7986c | https://basescan.org/address/0x3494e15b6a9e97c00fff34c40894536a65c7986c#code |
-| EventLogger | `<ADDRESS>` | Logging | Logs event hashes. |
-| PriceUpdater | `<ADDRESS>` | Price | Updates price values. |
-| TodoManager | `<ADDRESS>` | Task Management | Manages todo lists. |
+| EventLogger | 0x53aD19AC899C652f4E0400023101Fb66625c5900 | Logging | https://basescan.org/address/0x53ad19ac899c652f4e0400023101fb66625c5900#code |
+| PriceUpdater | 0x4b830492A7E1F4163BE2772BbE960eEC13b1D3cc | Price | https://basescan.org/address/0x4b830492a7e1f4163be2772bbe960eec13b1d3cc#code |
+| TodoManager | 0x669D72D5e4BCbec9d7595F08295cc532Dc648CFB | Task Management | https://basescan.org/address/0x669d72d5e4bcbec9d7595f08295cc532dc648cfb#code |
 | ScoreUpdater | `<ADDRESS>` | Scoring | Updates single score. |
 | FeedbackReceiver | `<ADDRESS>` | Feedback | Routes feedback to owner. |
 | WishUpdater | `<ADDRESS>` | Updates | Updates a single wish. |
