@@ -29,11 +29,11 @@ BaseForgeUtils provides standalone Solidity contracts (no imports, no flattening
 | EventLogger | 0x53aD19AC899C652f4E0400023101Fb66625c5900 | Logging | https://basescan.org/address/0x53ad19ac899c652f4e0400023101fb66625c5900#code |
 | PriceUpdater | 0x4b830492A7E1F4163BE2772BbE960eEC13b1D3cc | Price | https://basescan.org/address/0x4b830492a7e1f4163be2772bbe960eec13b1d3cc#code |
 | TodoManager | 0x669D72D5e4BCbec9d7595F08295cc532Dc648CFB | Task Management | https://basescan.org/address/0x669d72d5e4bcbec9d7595f08295cc532dc648cfb#code |
-| ScoreUpdater | `<ADDRESS>` | Scoring | Updates single score. |
-| FeedbackReceiver | `<ADDRESS>` | Feedback | Routes feedback to owner. |
-| WishUpdater | `<ADDRESS>` | Updates | Updates a single wish. |
-| QuizSolver | `<ADDRESS>` | Quiz | Stores quiz solutions. |
-| DonationReceiver | `<ADDRESS>` | Donation | Receives and withdraws donations. |
+| ScoreUpdater | 0xa370D1B816Ec480F2B854c1a8661E5f5D4bD3ee9 | Scoring | https://basescan.org/address/0xa370d1b816ec480f2b854c1a8661e5f5d4bd3ee9#code |
+| FeedbackReceiver | 0xB3d6EC7Ac1B5D79385217b08AA720095BFA637ea | Feedback | https://basescan.org/address/0xb3d6ec7ac1b5d79385217b08aa720095bfa637ea#code |
+| WishUpdater | 0x2528FD3604611aeDAf7dCff8c62C49D5aC2c0f5a | Updates | https://basescan.org/address/0x2528fd3604611aedaf7dcff8c62c49d5ac2c0f5a#code |
+| QuizSolver | 0x0b8E2bAf22fF479599060d6B24c83e3ee8E0F04C | Quiz | https://basescan.org/address/0x0b8e2baf22ff479599060d6b24c83e3ee8e0f04c#code |
+| DonationReceiver | 0xCddD880bF2Cfe4C2cB56E1030E2541B4AC1E7b86 | Donation | https://basescan.org/address/0xcddd880bf2cfe4c2cb56e1030e2541b4ac1e7b86#code |
 | BadgeViewer | `<ADDRESS>` | Badges | Tracks badge views. |
 | PollUpdater | `<ADDRESS>` | Polling | Updates poll values. |
 | ReminderViewer | `<ADDRESS>` | Reminders | Displays user reminders. |
