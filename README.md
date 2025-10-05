@@ -34,9 +34,9 @@ BaseForgeUtils provides standalone Solidity contracts (no imports, no flattening
 | WishUpdater | 0x2528FD3604611aeDAf7dCff8c62C49D5aC2c0f5a | Updates | https://basescan.org/address/0x2528fd3604611aedaf7dcff8c62c49d5ac2c0f5a#code |
 | QuizSolver | 0x0b8E2bAf22fF479599060d6B24c83e3ee8E0F04C | Quiz | https://basescan.org/address/0x0b8e2baf22ff479599060d6b24c83e3ee8e0f04c#code |
 | DonationReceiver | 0xCddD880bF2Cfe4C2cB56E1030E2541B4AC1E7b86 | Donation | https://basescan.org/address/0xcddd880bf2cfe4c2cb56e1030e2541b4ac1e7b86#code |
-| BadgeViewer | `<ADDRESS>` | Badges | Tracks badge views. |
-| PollUpdater | `<ADDRESS>` | Polling | Updates poll values. |
-| ReminderViewer | `<ADDRESS>` | Reminders | Displays user reminders. |
+| BadgeViewer | 0xE9f9e065033266f8b334Fe023bBC2217fC29C369 | Badges | https://basescan.org/address/0xe9f9e065033266f8b334fe023bbc2217fc29c369#code |
+| PollUpdater | 0x898e9CCfA8863c5CFa55C07C52C4d5F7a44004e5 | Polling | https://basescan.org/address/0x898e9ccfa8863c5cfa55c07c52c4d5f7a44004e5#code |
+| ReminderViewer |0xd2FC2Fc2c42787f66541F8c0f6cB3F892Ee99f36 | Reminders | https://basescan.org/address/0xd2fc2fc2c42787f66541f8c0f6cb3f892ee99f36#code |
 | FeedbackViewer | `<ADDRESS>` | Feedback | Displays single feedback. |
 | PollLogger | `<ADDRESS>` | Logging | Logs poll hashes. |
 | EventUpdater | `<ADDRESS>` | Events | Updates event data. |
