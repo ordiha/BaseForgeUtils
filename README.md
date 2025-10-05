@@ -37,7 +37,7 @@ BaseForgeUtils provides standalone Solidity contracts (no imports, no flattening
 | BadgeViewer | 0xE9f9e065033266f8b334Fe023bBC2217fC29C369 | Badges | https://basescan.org/address/0xe9f9e065033266f8b334fe023bbc2217fc29c369#code |
 | PollUpdater | 0x898e9CCfA8863c5CFa55C07C52C4d5F7a44004e5 | Polling | https://basescan.org/address/0x898e9ccfa8863c5cfa55c07c52c4d5f7a44004e5#code |
 | ReminderViewer |0xd2FC2Fc2c42787f66541F8c0f6cB3F892Ee99f36 | Reminders | https://basescan.org/address/0xd2fc2fc2c42787f66541f8c0f6cb3f892ee99f36#code |
-| FeedbackViewer | `<ADDRESS>` | Feedback | Displays single feedback. |
+| FeedbackViewer | 0x911B78249De58C3CFAa687D366d7C36b24971d68 | Feedback | https://basescan.org/address/0x911b78249de58c3cfaa687d366d7c36b24971d68#code |
 | PollLogger | `<ADDRESS>` | Logging | Logs poll hashes. |
 | EventUpdater | `<ADDRESS>` | Events | Updates event data. |
 | PriceLogger | `<ADDRESS>` | Price | Logs price records. |
