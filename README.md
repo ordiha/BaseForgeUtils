@@ -42,8 +42,8 @@ BaseForgeUtils provides standalone Solidity contracts (no imports, no flattening
 | EventUpdater | `<ADDRESS>` | Events | Updates event data. |
 | PriceLogger | 0xbaaF48116004E506bE09513E693db126d0306aeA | Price | https://basescan.org/address/0xbaaf48116004e506be09513e693db126d0306aea#code |
 | TodoViewer | `<ADDRESS>` | Tasks | Tracks todo views. |
-| ScoreViewer | `<ADDRESS>` | Scoring | Tracks score views. |
-| FeedbackSetter | `<ADDRESS>` | Feedback | Sets single feedback. |
+| ScoreViewer | 0x874e8A873A1BA7A554bC272663d97dCEF68a98b5 | Scoring | https://basescan.org/address/0x874e8a873a1ba7a554bc272663d97dcef68a98b5#code |
+| FeedbackSetter | 0xF761598f5d992029E87965286E0AD083e9Bb7729 | Feedback | https://basescan.org/address/0xf761598f5d992029e87965286e0ad083e9bb7729#code |
 | WishLogger | `<ADDRESS>` | Logging | Logs wish hashes. |
 | QuizLogger | `<ADDRESS>` | Quiz | Logs quiz records. |
 | DonationSetter | `<ADDRESS>` | Donation | Sets donation amounts. |
