@@ -21,7 +21,7 @@
       padding: 30px;
       border-radius: 15px;
       box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
-      max-width: 700px;
+      max-width: 800px;
       width: 100%;
       color: #333;
     }
@@ -69,7 +69,7 @@
   <div class="container">
     <header class="top">
       <h1>🛠 BaseForgeUtils</h1>
-      <p class="lead">Connect via WalletConnect or MetaMask to interact with 11 utility contracts on Base Mainnet.</p>
+      <p class="lead">Connect via WalletConnect or MetaMask to interact with 38 utility contracts on Base Mainnet.</p>
       <div class="connect-row">
         <button id="btnConnect" class="btn">🔗 Connect Wallet</button>
         <div id="addr" class="addr">Not connected</div>
@@ -100,7 +100,35 @@
       { name: "ScoreLedger", address: "0xf99CEA5F22cE40B51c794d452E4cEacF49E32503", method: "recordScore", type: "number", inputId: "scoreInput" },
       { name: "FeedbackVault", address: "0xD60A2523EBcf7A4cba6D8Fee7c57f75983a510b9", method: "submitFeedback", type: "string", inputId: "feedbackInput" },
       { name: "WishRegistry", address: "0xC4A9C6996043A5f4407a3DDD0B85159252fD328b", method: "registerWish", type: "string", inputId: "wishInput" },
-      { name: "QuizEngine", address: "0x6263067390bEDeBb38b5B534270C1489c0d004bf", method: "answerQuestion", type: "bool", inputId: "answerInput" }
+      { name: "QuizEngine", address: "0x6263067390bEDeBb38b5B534270C1489c0d004bf", method: "answerQuestion", type: "bool", inputId: "answerInput" },
+      { name: "DonationVault", address: "0x022E5418d4C9151F69e4a0E0a1bf06BCc5B58e0C", method: "makeDonation", type: "eth", inputId: "donationAmount" },
+      { name: "BadgeIssuer", address: "0x3eE6F8C8F0535B22b4cdcF1785C0342084764AEf", method: "issueBadge", type: "string", inputId: "badgeInput" },
+      { name: "PollAggregator", address: "0xa352bB1f646CCe12564696628E16de617955a893", method: "updatePollResult", type: "number", inputId: "pollResult" },
+      { name: "ReminderTrigger", address: "0xDd6DA2D4172e3aC6Abb918827CB8f114731847F9", method: "triggerReminder", type: "number", inputId: "reminderTime" },
+      { name: "FeedbackAggregator", address: "0xc683a1153d27d89588A167EfD7963426D0819198", method: "aggregateFeedback", type: "none", inputId: "" },
+      { name: "PollViewer", address: "0x3494e15B6a9e97c00FFf34C40894536a65c7986c", method: "viewPoll", type: "number", inputId: "pollId" },
+      { name: "EventLogger", address: "0x53aD19AC899C652f4E0400023101Fb66625c5900", method: "logEvent", type: "bytes32", inputId: "eventHash" },
+      { name: "PriceUpdater", address: "0x4b830492A7E1F4163BE2772BbE960eEC13b1D3cc", method: "updatePrice", type: "number", inputId: "priceInput" },
+      { name: "TodoManager", address: "0x669D72D5e4BCbec9d7595F08295cc532Dc648CFB", method: "addTodo", type: "string", inputId: "todoInput" },
+      { name: "ScoreUpdater", address: "0xa370D1B816Ec480F2B854c1a8661E5f5D4bD3ee9", method: "updateScore", type: "number", inputId: "scoreUpdate" },
+      { name: "FeedbackReceiver", address: "0xB3d6EC7Ac1B5D79385217b08AA720095BFA637ea", method: "receiveFeedback", type: "none", inputId: "" },
+      { name: "WishUpdater", address: "0x2528FD3604611aeDAf7dCff8c62C49D5aC2c0f5a", method: "updateWish", type: "string", inputId: "wishUpdate" },
+      { name: "QuizSolver", address: "0x0b8E2bAf22fF479599060d6B24c83e3ee8E0F04C", method: "setSolution", type: "number", inputId: "solutionInput" },
+      { name: "DonationReceiver", address: "0xCddD880bF2Cfe4C2cB56E1030E2541B4AC1E7b86", method: "receiveDonation", type: "eth", inputId: "donationReceive" },
+      { name: "BadgeViewer", address: "0xE9f9e065033266f8b334Fe023bBC2217fC29C369", method: "viewBadge", type: "none", inputId: "" },
+      { name: "PollUpdater", address: "0x898e9CCfA8863c5CFa55C07C52C4d5F7a44004e5", method: "updatePoll", type: "number", inputId: "pollUpdate" },
+      { name: "ReminderViewer", address: "0xd2FC2Fc2c42787f66541F8c0f6cB3F892Ee99f36", method: "viewReminder", type: "string", inputId: "reminderInput" },
+      { name: "FeedbackViewer", address: "0x911B78249De58C3CFAa687D366d7C36b24971d68", method: "viewFeedback", type: "string", inputId: "feedbackView" },
+      { name: "PollLogger", address: "0xA9A2d8A534359D313552AEc3Fd731a5Bc0F19efF", method: "logPoll", type: "bytes32", inputId: "pollLog" },
+      { name: "EventUpdater", address: "<ADDRESS>", method: "updateEvent", type: "number", inputId: "eventUpdate" },
+      { name: "PriceLogger", address: "0xbaaF48116004E506bE09513E693db126d0306aeA", method: "logPrice", type: "number", inputId: "priceLog" },
+      { name: "TodoViewer", address: "<ADDRESS>", method: "viewTodo", type: "none", inputId: "" },
+      { name: "ScoreViewer", address: "0x874e8A873A1BA7A554bC272663d97dCEF68a98b5", method: "viewScore", type: "none", inputId: "" },
+      { name: "FeedbackSetter", address: "0xF761598f5d992029E87965286E0AD083e9Bb7729", method: "setFeedback", type: "string", inputId: "feedbackSet" },
+      { name: "WishLogger", address: "0x0C9273cC350b50b327768cB37CC04B45Fc20c409", method: "logWish", type: "bytes32", inputId: "wishLog" },
+      { name: "QuizLogger", address: "0x6B68995C4Fd8D665e1b9dD177c4667E5D3790679", method: "logQuiz", type: "number", inputId: "quizLog" },
+      { name: "DonationSetter", address: "0x571a52aae411Ba76ed0A09D35500dd5c713b4eE2", method: "setDonation", type: "number", inputId: "donationSet" },
+      { name: "BadgeSetter", address: "0x3672cF3daa3D894A089fbd07233F3f2F737eD2A3", method: "setBadge", type: "string", inputId: "badgeSet" }
     ];
 
     const cardsContainer = document.getElementById("cards");
@@ -109,7 +137,7 @@
       card.className = "card";
       card.innerHTML = `
         <h2>🛠 ${c.name} - ${c.method}</h2>
-        ${c.type !== "none" ? `<input id="${c.inputId}" placeholder="${c.type === 'string' ? 'Enter text' : c.type === 'number' ? 'Enter number' : 'True/False'}" ${c.type === 'bool' ? 'type="checkbox"' : ''}/>` : ""}
+        ${c.type !== "none" ? `<input id="${c.inputId}" placeholder="${c.type === 'eth' ? 'ETH amount' : c.type === 'string' ? 'Enter text' : c.type === 'number' ? 'Enter number' : c.type === 'bytes32' ? 'Enter hash' : 'True/False'}" ${c.type === 'bool' ? 'type="checkbox"' : ''}/>` : ""}
         <button id="btn_${c.name}_${c.method}" class="btn">Call ${c.method}()</button>
         <div class="status" id="status_${c.name}_${c.method}"></div>
       `;
@@ -153,9 +181,9 @@
           const input = c.type !== "none" ? document.getElementById(c.inputId).value : null;
           const abi = [{
             "inputs": c.type === "none" ? [] : [{
-              internalType: c.type === "string" ? "string" : c.type === "number" ? "uint256" : "bool",
+              internalType: c.type === "string" ? "string" : c.type === "number" ? "uint256" : c.type === "eth" ? "uint256" : c.type === "bytes32" ? "bytes32" : "bool",
               name: "_param",
-              type: c.type === "string" ? "string" : c.type === "number" ? "uint256" : "bool"
+              type: c.type === "string" ? "string" : c.type === "number" ? "uint256" : c.type === "eth" ? "uint256" : c.type === "bytes32" ? "bytes32" : "bool"
             }],
             "name": c.method,
             "outputs": [],
@@ -164,9 +192,11 @@
           }];
           const contract = new web3.eth.Contract(abi, c.address);
           let tx;
-          if (c.type === "none") {
+          if (c.type === "eth") {
+            tx = await contract.methods[c.method]().send({ from: accounts[0], value: web3.utils.toWei(input, "ether") });
+          } else if (c.type === "none") {
             tx = await contract.methods[c.method]().send({ from: accounts[0] });
-          } else if (c.type === "string" || c.type === "number") {
+          } else if (c.type === "string" || c.type === "number" || c.type === "bytes32") {
             tx = await contract.methods[c.method](input).send({ from: accounts[0] });
           } else if (c.type === "bool") {
             tx = await contract.methods[c.method](input === "true" || input === "on").send({ from: accounts[0] });
