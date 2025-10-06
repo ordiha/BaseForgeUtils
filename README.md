@@ -49,6 +49,8 @@ BaseForgeUtils provides standalone Solidity contracts (no imports, no flattening
 | DonationSetter | 0x571a52aae411Ba76ed0A09D35500Dd5c713b4eE2 | Donation | https://basescan.org/address/0x571a52aae411ba76ed0a09d35500dd5c713b4ee2#code |
 | BadgeSetter | 0x3672cF3daa3D894A089fbd07233F3f2F737eD2A3 | Badges |https://basescan.org/address/0x3672cf3daa3d894a089fbd07233f3f2f737ed2a3#code |
 | GasTracker | 0xC6BCEF04Ef933FCb7756186F351d3Dfe8aEf1591 | Tracking | https://basescan.org/address/0xc6bcef04ef933fcb7756186f351d3dfe8aef1591#code |
+| NonceManager | 0x41CF6AFcFDfE7eF1749fCB747d9AE69E21646Bba | Management |https://basescan.org/address/0x41cf6afcfdfe7ef1749fcb747d9ae69e21646bba#code |
+| BlockNumberLogger | 0x352Bd9331E0a0241Eb6738d90Ff5672aeee856AB | Logging | https://basescan.org/address/0x352bd9331e0a0241eb6738d90ff5672aeee856ab#code |
 
 ## Deployment
 1. **Environment**: Remix IDE (Solidity ^0.8.20).
