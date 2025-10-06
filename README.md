@@ -44,9 +44,9 @@ BaseForgeUtils provides standalone Solidity contracts (no imports, no flattening
 | TodoViewer | `<ADDRESS>` | Tasks | Tracks todo views. |
 | ScoreViewer | 0x874e8A873A1BA7A554bC272663d97dCEF68a98b5 | Scoring | https://basescan.org/address/0x874e8a873a1ba7a554bc272663d97dcef68a98b5#code |
 | FeedbackSetter | 0xF761598f5d992029E87965286E0AD083e9Bb7729 | Feedback | https://basescan.org/address/0xf761598f5d992029e87965286e0ad083e9bb7729#code |
-| WishLogger | `<ADDRESS>` | Logging | Logs wish hashes. |
-| QuizLogger | `<ADDRESS>` | Quiz | Logs quiz records. |
-| DonationSetter | `<ADDRESS>` | Donation | Sets donation amounts. |
+| WishLogger | 0x0C9273cC350b50b327768cB37CC04B45Fc20c409 | Logging | https://basescan.org/address/0x0c9273cc350b50b327768cb37cc04b45fc20c409#code |
+| QuizLogger | 0x6B68995C4Fd8D665e1b9dD177c4667E5D3790679 | Quiz | https://basescan.org/address/0x6b68995c4fd8d665e1b9dd177c4667e5d3790679#code |
+| DonationSetter | 0x571a52aae411Ba76ed0A09D35500Dd5c713b4eE2 | Donation | https://basescan.org/address/0x571a52aae411ba76ed0a09d35500dd5c713b4ee2#code |
 | BadgeSetter | `<ADDRESS>` | Badges | Sets single badge. |
 | PollSetter | `<ADDRESS>` | Polling | Sets poll values. |
 
